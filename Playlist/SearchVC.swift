@@ -7,12 +7,17 @@
 //
 
 import UIKit
+import Alamofire
+
+typealias DownloadComplete = () -> ()
 
 class SearchVC: UIViewController, UISearchResultsUpdating, UISearchControllerDelegate, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var searchBarTop: UISearchBar!
     @IBOutlet weak var searchTable: UITableView!
+    
+    var _searchBarText: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,20 +30,44 @@ class SearchVC: UIViewController, UISearchResultsUpdating, UISearchControllerDel
         
         searchTable.delegate = self
         searchTable.dataSource = self
+        
+
+    }
+    
+    func searchBarText() -> String {
+        if (_searchBarText == nil) {
+            _searchBarText = ""
+        }
+        return _searchBarText
     }
     
     /******************* Search Bar *****************/
     
     func updateSearchResults(for searchController: UISearchController) {
         // TO DO
+
     }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         searchBarTop.showsCancelButton = true
+
     }
     
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        _searchBarText = searchBarTop.text
+        downloadSearch {
+            
+        }
+    }
+    
+
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         searchBarTop.showsCancelButton = false
+
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        _searchBarText = searchBarTop.text
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
@@ -68,6 +97,19 @@ class SearchVC: UIViewController, UISearchResultsUpdating, UISearchControllerDel
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
+    }
+    
+    
+    /* Search */
+    
+    func downloadSearch(completed: @escaping DownloadComplete) {
+        let url = BASE_URL + PART_SNIPPET + QUERYEQUAL + "\(self._searchBarText as String)" + KEY
+        Alamofire.request( url).responseJSON { response in
+            if let dict = response.result.value as? Dictionary<String, AnyObject> {
+                print(dict)
+            }
+            completed()
+        }
     }
 
 

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8397BED581CBB6AA96DEACFC /* Pods_Playlist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 949C750FC4981917533BFE1C /* Pods_Playlist.framework */; };
+		DA4964961F56433500D5CCF0 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4964951F56433500D5CCF0 /* Constant.swift */; };
 		DA80DDB71F538B7200B682E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA80DDB61F538B7200B682E8 /* AppDelegate.swift */; };
 		DA80DDB91F538B7200B682E8 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA80DDB81F538B7200B682E8 /* MainVC.swift */; };
 		DA80DDBC1F538B7200B682E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA80DDBA1F538B7200B682E8 /* Main.storyboard */; };
@@ -44,6 +45,7 @@
 /* Begin PBXFileReference section */
 		949C750FC4981917533BFE1C /* Pods_Playlist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Playlist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1BC60210AAC0CE39D04627F /* Pods-Playlist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Playlist.release.xcconfig"; path = "Pods/Target Support Files/Pods-Playlist/Pods-Playlist.release.xcconfig"; sourceTree = "<group>"; };
+		DA4964951F56433500D5CCF0 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		DA80DDB31F538B7200B682E8 /* Playlist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Playlist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA80DDB61F538B7200B682E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA80DDB81F538B7200B682E8 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				DAC9F0D31F54D92600FEBBAB /* Model */,
 				DAC9F0D21F54D91900FEBBAB /* Controller */,
 				DAC9F0D41F54D92C00FEBBAB /* View */,
+				DA4964951F56433500D5CCF0 /* Constant.swift */,
 				DA80DDB61F538B7200B682E8 /* AppDelegate.swift */,
 				DA80DDBA1F538B7200B682E8 /* Main.storyboard */,
 				DA80DDBD1F538B7200B682E8 /* Assets.xcassets */,
@@ -395,6 +398,7 @@
 				DAC9F0CF1F54C6B400FEBBAB /* LibraryVC.swift in Sources */,
 				DAC9F0CD1F549A3D00FEBBAB /* SearchVC.swift in Sources */,
 				DA80DDB91F538B7200B682E8 /* MainVC.swift in Sources */,
+				DA4964961F56433500D5CCF0 /* Constant.swift in Sources */,
 				DA80DDB71F538B7200B682E8 /* AppDelegate.swift in Sources */,
 				DAC9F0D61F54D94F00FEBBAB /* Playlist.swift in Sources */,
 			);

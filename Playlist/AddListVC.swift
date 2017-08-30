@@ -12,16 +12,12 @@ class AddListVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print("REACHED")
+
     }
     
     @IBAction func cancelPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-//    @IBAction func cancelBtnPressed(_ sender: Any) {
-//        self.dismiss(animated: true, completion: nil)
-//    }
-//    
+
     
 }
