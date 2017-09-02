@@ -74,6 +74,10 @@
                                                 <constraint firstAttribute="bottom" secondItem="b0l-LI-BG8" secondAttribute="bottom" constant="5" id="wCX-mn-TIV"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="thumbnail" destination="b0l-LI-BG8" id="tJL-b0-B6H"/>
+                                            <outlet property="title" destination="3NE-xI-TX2" id="LoS-Rq-bb8"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

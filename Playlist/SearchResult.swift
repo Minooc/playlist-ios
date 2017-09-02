@@ -10,15 +10,16 @@ import UIKit
 
 class SearchResult: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    @IBOutlet weak var thumbnail: UIImageView!
+    @IBOutlet weak var title: UILabel!
+    
+    func configureCell(ytObject: YoutubeVideo) {
+        title.text = ytObject._title
+        
+        let url = URL(string: ytObject._thumbUrl)
+        let data = try? Data(contentsOf: url!)
+        thumbnail.image = UIImage(data: data!)
+        
     }
 
 }

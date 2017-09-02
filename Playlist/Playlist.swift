@@ -13,7 +13,7 @@ class Playlist {
     
     var _title: String!
     var _thumbnail: UIImage!
-    var _songs = [Song]()
+    var _songs = [YoutubeVideo]()
     
     init() {
         

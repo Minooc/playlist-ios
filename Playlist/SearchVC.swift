@@ -16,6 +16,10 @@ class SearchVC: UIViewController, UISearchResultsUpdating, UISearchControllerDel
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var searchBarTop: UISearchBar!
     @IBOutlet weak var searchTable: UITableView!
+    private var _title: String!
+    private var _videoUrl: String!
+    private var _thumbnail: AnyObject!
+    private var searchList: [YoutubeVideo] = []
     
     var _searchBarText: String!
     
@@ -83,11 +87,15 @@ class SearchVC: UIViewController, UISearchResultsUpdating, UISearchControllerDel
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return searchList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "searchResultCell", for: indexPath) as? SearchResult {
+            
+            let ytObject = searchList[indexPath.row]
+            cell.configureCell(ytObject: ytObject)
+            
             return cell
         } else {
             return SearchResult()
@@ -105,8 +113,43 @@ class SearchVC: UIViewController, UISearchResultsUpdating, UISearchControllerDel
     func downloadSearch(completed: @escaping DownloadComplete) {
         let url = BASE_URL + PART_SNIPPET + QUERYEQUAL + "\(self._searchBarText as String)" + KEY
         Alamofire.request( url).responseJSON { response in
+            
             if let dict = response.result.value as? Dictionary<String, AnyObject> {
-                print(dict)
+                let items = dict["items"] as? [Dictionary<String, AnyObject>]
+                
+                for item in items! {
+                    
+                    let thisVideo = YoutubeVideo()
+                    
+                    let snippet = item["snippet"] as? Dictionary<String, AnyObject>
+                    
+                    if let title = snippet?["title"] as? String {
+                        self._title = title
+                    }
+                    
+                
+                    let thumbList = snippet?["thumbnails"] as? AnyObject
+                    
+                    if let thumb = thumbList?["default"] as? AnyObject {
+                        self._thumbnail = thumb
+                    }
+                    
+                
+                    if let id = item["id"] as? Dictionary<String, String> {
+                        let videoId = id["videoId"]
+                        let videoUrl = "https://www.youtube.com/watch?v=" + videoId!
+                        self._videoUrl =  videoUrl
+                    }
+                    
+                    
+                    thisVideo.configure(title: self._title, thumbnail: self._thumbnail as! Dictionary<String, AnyObject>, url: self._videoUrl)
+                    self.searchList.append(thisVideo)
+                    
+             
+                }
+                
+                self.searchTable.reloadData()
+                
             }
             completed()
         }
