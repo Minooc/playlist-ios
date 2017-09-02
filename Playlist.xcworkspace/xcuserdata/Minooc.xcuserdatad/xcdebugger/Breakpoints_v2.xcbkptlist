@@ -88,11 +88,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Playlist/SearchVC.swift"
-            timestampString = "526005327.931715"
+            timestampString = "526021185.04598"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
+            startingLineNumber = "185"
+            endingLineNumber = "185"
             landmarkName = "downloadSearch(completed:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -104,12 +104,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Playlist/YoutubeVideo.swift"
-            timestampString = "526004503.563606"
+            timestampString = "526018777.950958"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "configure(title:thumbnail:url:)"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "configure(title:thumbnail:url:id:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Playlist/AddListVC.swift"
+            timestampString = "526021185.04598"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

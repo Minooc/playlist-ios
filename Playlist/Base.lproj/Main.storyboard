@@ -52,29 +52,43 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thumb" translatesAutoresizingMaskIntoConstraints="NO" id="b0l-LI-BG8">
-                                                    <rect key="frame" x="10" y="5" width="40" height="33.666666666666664"/>
+                                                    <rect key="frame" x="10" y="5.6666666666666679" width="40" height="33"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="40" id="vbI-8c-IHO"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title of the video" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3NE-xI-TX2">
-                                                    <rect key="frame" x="65" y="5" width="339" height="33.666666666666664"/>
+                                                    <rect key="frame" x="65" y="5" width="309" height="34"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ATs-lT-h3c">
+                                                    <rect key="frame" x="384" y="12" width="20" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="WCZ-og-aVV"/>
+                                                        <constraint firstAttribute="width" constant="20" id="j8M-sR-bwe"/>
+                                                    </constraints>
+                                                    <state key="normal" image="add"/>
+                                                    <connections>
+                                                        <action selector="addBtnPressed:" destination="vwC-re-q6D" eventType="touchUpInside" id="JD8-rw-Ows"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="3NE-xI-TX2" secondAttribute="trailing" constant="10" id="7KN-QY-r3l"/>
+                                                <constraint firstItem="ATs-lT-h3c" firstAttribute="centerY" secondItem="UUD-g6-WFi" secondAttribute="centerY" id="3Ou-16-vFf"/>
                                                 <constraint firstItem="3NE-xI-TX2" firstAttribute="top" secondItem="UUD-g6-WFi" secondAttribute="top" constant="5" id="7VJ-F8-s01"/>
                                                 <constraint firstItem="b0l-LI-BG8" firstAttribute="leading" secondItem="UUD-g6-WFi" secondAttribute="leading" constant="10" id="Ba9-gv-Usp"/>
                                                 <constraint firstItem="3NE-xI-TX2" firstAttribute="leading" secondItem="b0l-LI-BG8" secondAttribute="trailing" constant="15" id="EIw-wh-z2u"/>
                                                 <constraint firstItem="b0l-LI-BG8" firstAttribute="top" secondItem="UUD-g6-WFi" secondAttribute="top" constant="5" id="L5z-9c-1d9"/>
                                                 <constraint firstAttribute="bottom" secondItem="3NE-xI-TX2" secondAttribute="bottom" constant="5" id="Vtr-pI-GdF"/>
+                                                <constraint firstItem="ATs-lT-h3c" firstAttribute="leading" secondItem="3NE-xI-TX2" secondAttribute="trailing" constant="10" id="a5b-lk-Cyr"/>
+                                                <constraint firstAttribute="trailing" secondItem="ATs-lT-h3c" secondAttribute="trailing" constant="10" id="er0-Ly-ZGL"/>
                                                 <constraint firstAttribute="bottom" secondItem="b0l-LI-BG8" secondAttribute="bottom" constant="5" id="wCX-mn-TIV"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="addBtn" destination="ATs-lT-h3c" id="ypZ-FW-Sxd"/>
                                             <outlet property="thumbnail" destination="b0l-LI-BG8" id="tJL-b0-B6H"/>
                                             <outlet property="title" destination="3NE-xI-TX2" id="LoS-Rq-bb8"/>
                                         </connections>
@@ -101,11 +115,12 @@
                         <outlet property="navBar" destination="aIN-zp-Lpy" id="K0K-VJ-avz"/>
                         <outlet property="searchBarTop" destination="iEp-dI-H98" id="3KF-9y-L7W"/>
                         <outlet property="searchTable" destination="U3u-0l-Vjr" id="0fS-NS-UQo"/>
+                        <segue destination="jh6-ZL-xck" kind="show" identifier="AddThisSong" id="XJa-CG-7tN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dLN-HS-ET4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="676" y="176"/>
+            <point key="canvasLocation" x="675.36231884057975" y="175.27173913043481"/>
         </scene>
         <!--Library-->
         <scene sceneID="9ZG-w5-j0y">
@@ -224,6 +239,11 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nGV-74-Jam">
+                                <rect key="frame" x="0.0" y="60" width="414" height="273"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -234,10 +254,13 @@
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="videoView" destination="nGV-74-Jam" id="a9h-IF-ApC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="okc-fJ-Ply" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1497" y="-1323"/>
+            <point key="canvasLocation" x="1495.6521739130435" y="-1323.0978260869567"/>
         </scene>
         <!--Home-->
         <scene sceneID="vqm-Yy-PnR">
@@ -315,4 +338,7 @@
         <image name="add" width="600" height="600"/>
         <image name="thumb" width="128" height="128"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="XJa-CG-7tN"/>
+    </inferredMetricsTieBreakers>
 </document>

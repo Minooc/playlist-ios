@@ -12,6 +12,7 @@ class SearchResult: UITableViewCell {
 
     @IBOutlet weak var thumbnail: UIImageView!
     @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var addBtn: UIButton!
     
     func configureCell(ytObject: YoutubeVideo) {
         title.text = ytObject._title

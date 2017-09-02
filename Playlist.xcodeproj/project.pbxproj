@@ -20,7 +20,7 @@
 		DAC9F0CF1F54C6B400FEBBAB /* LibraryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC9F0CE1F54C6B400FEBBAB /* LibraryVC.swift */; };
 		DAC9F0D11F54C6E000FEBBAB /* AddListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC9F0D01F54C6E000FEBBAB /* AddListVC.swift */; };
 		DAC9F0D61F54D94F00FEBBAB /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC9F0D51F54D94F00FEBBAB /* Playlist.swift */; };
-		DAC9F0D81F54D9B100FEBBAB /* YoutubeVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC9F0D71F54D9B100FEBBAB /* YoutubeVideo.swift */; };
+		DAC9F0D81F54D9B100FEBBAB /* Youtube.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC9F0D71F54D9B100FEBBAB /* Youtube.swift */; };
 		DAC9F0DC1F54DBBB00FEBBAB /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC9F0DB1F54DBBB00FEBBAB /* SearchResult.swift */; };
 		DAC9F0DE1F54DD6700FEBBAB /* PlayListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC9F0DD1F54DD6700FEBBAB /* PlayListCell.swift */; };
 /* End PBXBuildFile section */
@@ -63,7 +63,7 @@
 		DAC9F0CE1F54C6B400FEBBAB /* LibraryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryVC.swift; sourceTree = "<group>"; };
 		DAC9F0D01F54C6E000FEBBAB /* AddListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddListVC.swift; sourceTree = "<group>"; };
 		DAC9F0D51F54D94F00FEBBAB /* Playlist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
-		DAC9F0D71F54D9B100FEBBAB /* YoutubeVideo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeVideo.swift; sourceTree = "<group>"; };
+		DAC9F0D71F54D9B100FEBBAB /* Youtube.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Youtube.swift; sourceTree = "<group>"; };
 		DAC9F0DB1F54DBBB00FEBBAB /* SearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		DAC9F0DD1F54DD6700FEBBAB /* PlayListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayListCell.swift; sourceTree = "<group>"; };
 		FEF97EBAE3B8E580400BC5FD /* Pods-Playlist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Playlist.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Playlist/Pods-Playlist.debug.xcconfig"; sourceTree = "<group>"; };
@@ -184,7 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				DAC9F0D51F54D94F00FEBBAB /* Playlist.swift */,
-				DAC9F0D71F54D9B100FEBBAB /* YoutubeVideo.swift */,
+				DAC9F0D71F54D9B100FEBBAB /* Youtube.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -391,7 +391,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAC9F0D81F54D9B100FEBBAB /* YoutubeVideo.swift in Sources */,
+				DAC9F0D81F54D9B100FEBBAB /* Youtube.swift in Sources */,
 				DAC9F0D11F54C6E000FEBBAB /* AddListVC.swift in Sources */,
 				DAC9F0DE1F54DD6700FEBBAB /* PlayListCell.swift in Sources */,
 				DAC9F0DC1F54DBBB00FEBBAB /* SearchResult.swift in Sources */,
