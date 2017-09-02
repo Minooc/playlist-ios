@@ -14,7 +14,7 @@ class SearchResult: UITableViewCell {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var addBtn: UIButton!
     
-    func configureCell(ytObject: YoutubeVideo) {
+    func configureCell(ytObject: Youtube) {
         title.text = ytObject._title
         
         let url = URL(string: ytObject._thumbUrl)

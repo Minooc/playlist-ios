@@ -175,7 +175,6 @@
 				DAC9F0CC1F549A3D00FEBBAB /* SearchVC.swift */,
 				DAC9F0CE1F54C6B400FEBBAB /* LibraryVC.swift */,
 				DAC9F0D01F54C6E000FEBBAB /* AddListVC.swift */,
-				DAC9F0DD1F54DD6700FEBBAB /* PlayListCell.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -192,6 +191,7 @@
 		DAC9F0D41F54D92C00FEBBAB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DAC9F0DD1F54DD6700FEBBAB /* PlayListCell.swift */,
 				DAC9F0DB1F54DBBB00FEBBAB /* SearchResult.swift */,
 			);
 			name = View;

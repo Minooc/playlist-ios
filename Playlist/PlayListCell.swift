@@ -10,15 +10,11 @@ import UIKit
 
 class PlayListCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    @IBOutlet weak var playlistLbl: UILabel!
+    @IBOutlet weak var thumbnail: UIImageView!
+    
+    func configureCell(plObject: Playlist) {
+        playlistLbl.text = plObject._title
     }
 
 }

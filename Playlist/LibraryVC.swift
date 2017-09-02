@@ -8,10 +8,12 @@
 
 import UIKit
 
-class LibraryVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class LibraryVC: UIViewController, UITableViewDataSource, UITableViewDelegate, AddListVCDelegate {
     
-    @IBOutlet weak var libraryTable: UITableView!
 
+    @IBOutlet weak var libraryTable: UITableView!
+    var playlist = Playlist()
+    var playlists = [Playlist]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +22,7 @@ class LibraryVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         libraryTable.dataSource = self
         
     }
+
     
     @IBAction func addPLBtnPressed(_ sender: Any) {
         performSegue(withIdentifier: "AddList", sender: nil)
@@ -27,22 +30,38 @@ class LibraryVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if (segue.identifier == "AddList") {
+            
             let addListVC = segue.destination as? AddListVC
+            addListVC?.playlists = self.playlists
+            addListVC?.delegate = self
             
         }
     }
+    
+    func dataChanged(playlists: [Playlist]) {
+        self.playlists = playlists
+        libraryTable.reloadData()
+    }
+    
+    
+    /******************** TABLE *********************/
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1    // need 1 section
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return playlists.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "playListCell", for: indexPath) as? PlayListCell {
+            
+            let plObject = playlists[indexPath.row]
+            cell.configureCell(plObject: plObject)
+            
             return cell
         } else {
             return PlayListCell()
@@ -50,10 +69,22 @@ class LibraryVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.delete) {
+            if (tableView.dequeueReusableCell(withIdentifier: "playListCell") as? PlayListCell) != nil {
+
+                let budget = playlists[indexPath.row]
+                playlists.remove(at: indexPath.item)
+                libraryTable.reloadData()
+                
+                
+            }
+        }
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
     
-
     
 }
