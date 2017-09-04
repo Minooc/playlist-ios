@@ -14,6 +14,8 @@ class PlaylistVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var playlistLbl: UINavigationItem!
     @IBOutlet weak var songListTable: UITableView!
     
+    var indexRow: Int!
+    
     var songList = [Youtube]()
     var playlistTitle: String!
     
@@ -24,6 +26,8 @@ class PlaylistVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
         songListTable.delegate = self
         songListTable.dataSource = self
+        
+        globalPlaylists[indexRow]._songs = songList
         
     }
     
@@ -51,6 +55,7 @@ class PlaylistVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             
         }
     }
+
     
     /******************* Table View *****************/
     
@@ -73,6 +78,19 @@ class PlaylistVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             return SongListCell()
         }
         
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.delete) {
+            if (tableView.dequeueReusableCell(withIdentifier: "songListCell") as? SongListCell) != nil {
+                
+                songList.remove(at: indexPath.item)
+                globalPlaylists[indexRow]._songs = songList
+                songListTable.reloadData()
+                
+                
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

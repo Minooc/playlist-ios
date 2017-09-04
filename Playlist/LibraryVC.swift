@@ -46,7 +46,8 @@ class LibraryVC: UIViewController, UITableViewDataSource, UITableViewDelegate, A
             let playlistVC = segue.destination as? PlaylistVC
             playlistVC?.playlistTitle = playlists[((sender as? IndexPath)?.row)!]._title
             playlistVC?.songList = playlists[((sender as? IndexPath)?.row)!]._songs
-            
+            playlistVC?.indexRow = (sender as? IndexPath)?.row
+        
             
         }
     }
@@ -57,6 +58,9 @@ class LibraryVC: UIViewController, UITableViewDataSource, UITableViewDelegate, A
         libraryTable.reloadData()
     }
     
+    func songChanged(songlist: [Youtube]) {
+        
+    }
     
     /******************** TABLE *********************/
     

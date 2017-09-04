@@ -319,7 +319,13 @@
                                     <constraint firstAttribute="height" constant="60" id="cs0-uh-HFB"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem title="Title" id="iP7-WL-KJD"/>
+                                    <navigationItem title="Title" id="iP7-WL-KJD">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="hb9-zH-GRi">
+                                            <connections>
+                                                <action selector="doneBtnPressed:" destination="yCZ-eC-i4t" id="lHZ-Ob-F9v"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aVm-Nq-Xag">

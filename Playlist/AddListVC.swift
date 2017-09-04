@@ -26,14 +26,7 @@ class AddListVC: UIViewController {
         super.viewDidLoad()
         
         globalPlaylists = self.playlists
-        /*
-        if (selectedVideo != nil) {
-            let selectedVideoURL : URL = URL(string: selectedVideo)!
-            let urlRequest : URLRequest = URLRequest(url: selectedVideoURL)
-            //videoView.loadHTMLString(selectedVideo, baseURL: nil)
-            videoView.loadRequest(urlRequest)
-        }
-         */
+        
         
 
     }
@@ -44,13 +37,6 @@ class AddListVC: UIViewController {
             playlist._title = playlistTxt.text
         }
         
-        /*
-        if let libVC = storyboard?.instantiateViewController(withIdentifier: "LibraryVC") as? LibraryVC {
-     
-            playlists.append(self.playlist)
-            libVC.playlists = self.playlists
-        }
-        */
 
         playlists.append(self.playlist)
         delegate?.dataChanged(playlists: playlists)
@@ -64,16 +50,6 @@ class AddListVC: UIViewController {
     }
     
     
-    /*
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "PlaylistCreated") {
-            
-             let libraryVC = segue.destination as? LibraryVC
-             libraryVC?.playlist = self.playlist
-             libraryVC?.playlists = self.playlists
-             libraryVC?.playlists.append(self.playlist)
-        }
- */
 }
  
     

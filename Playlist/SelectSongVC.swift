@@ -16,6 +16,9 @@ class SelectSongVC: UIViewController {
     var songTitleForSegue: String!
     var selectedSong: String!
     
+    @IBAction func doneBtnPressed(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

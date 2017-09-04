@@ -29,11 +29,6 @@ class AddToPlaylistVC: UIViewController,UITableViewDataSource, UITableViewDelega
     @IBAction func cancelBtnPressed(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
     }
-    
-    func dataChanged(playlists: [Playlist]) {
-        self.playlists = playlists
-        playlistTable.reloadData()
-    }
 
     
     /******************** TABLE *********************/
