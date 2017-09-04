@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		8397BED581CBB6AA96DEACFC /* Pods_Playlist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 949C750FC4981917533BFE1C /* Pods_Playlist.framework */; };
 		DA4964961F56433500D5CCF0 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4964951F56433500D5CCF0 /* Constant.swift */; };
+		DA4964B91F5CB8E000D5CCF0 /* AddToPlaylistVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4964B81F5CB8E000D5CCF0 /* AddToPlaylistVC.swift */; };
+		DA4964BB1F5CBCEF00D5CCF0 /* SongListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4964BA1F5CBCEF00D5CCF0 /* SongListCell.swift */; };
+		DA4964BD1F5CC6D900D5CCF0 /* PlaylistVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4964BC1F5CC6D900D5CCF0 /* PlaylistVC.swift */; };
+		DA4964BF1F5CD11300D5CCF0 /* SelectSongVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4964BE1F5CD11300D5CCF0 /* SelectSongVC.swift */; };
 		DA80DDB71F538B7200B682E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA80DDB61F538B7200B682E8 /* AppDelegate.swift */; };
 		DA80DDB91F538B7200B682E8 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA80DDB81F538B7200B682E8 /* MainVC.swift */; };
 		DA80DDBC1F538B7200B682E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA80DDBA1F538B7200B682E8 /* Main.storyboard */; };
@@ -46,6 +50,10 @@
 		949C750FC4981917533BFE1C /* Pods_Playlist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Playlist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1BC60210AAC0CE39D04627F /* Pods-Playlist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Playlist.release.xcconfig"; path = "Pods/Target Support Files/Pods-Playlist/Pods-Playlist.release.xcconfig"; sourceTree = "<group>"; };
 		DA4964951F56433500D5CCF0 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		DA4964B81F5CB8E000D5CCF0 /* AddToPlaylistVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddToPlaylistVC.swift; sourceTree = "<group>"; };
+		DA4964BA1F5CBCEF00D5CCF0 /* SongListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongListCell.swift; sourceTree = "<group>"; };
+		DA4964BC1F5CC6D900D5CCF0 /* PlaylistVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistVC.swift; sourceTree = "<group>"; };
+		DA4964BE1F5CD11300D5CCF0 /* SelectSongVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectSongVC.swift; sourceTree = "<group>"; };
 		DA80DDB31F538B7200B682E8 /* Playlist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Playlist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA80DDB61F538B7200B682E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA80DDB81F538B7200B682E8 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -175,6 +183,9 @@
 				DAC9F0CC1F549A3D00FEBBAB /* SearchVC.swift */,
 				DAC9F0CE1F54C6B400FEBBAB /* LibraryVC.swift */,
 				DAC9F0D01F54C6E000FEBBAB /* AddListVC.swift */,
+				DA4964B81F5CB8E000D5CCF0 /* AddToPlaylistVC.swift */,
+				DA4964BC1F5CC6D900D5CCF0 /* PlaylistVC.swift */,
+				DA4964BE1F5CD11300D5CCF0 /* SelectSongVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -193,6 +204,7 @@
 			children = (
 				DAC9F0DD1F54DD6700FEBBAB /* PlayListCell.swift */,
 				DAC9F0DB1F54DBBB00FEBBAB /* SearchResult.swift */,
+				DA4964BA1F5CBCEF00D5CCF0 /* SongListCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -391,15 +403,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA4964BB1F5CBCEF00D5CCF0 /* SongListCell.swift in Sources */,
 				DAC9F0D81F54D9B100FEBBAB /* Youtube.swift in Sources */,
 				DAC9F0D11F54C6E000FEBBAB /* AddListVC.swift in Sources */,
 				DAC9F0DE1F54DD6700FEBBAB /* PlayListCell.swift in Sources */,
 				DAC9F0DC1F54DBBB00FEBBAB /* SearchResult.swift in Sources */,
 				DAC9F0CF1F54C6B400FEBBAB /* LibraryVC.swift in Sources */,
+				DA4964B91F5CB8E000D5CCF0 /* AddToPlaylistVC.swift in Sources */,
 				DAC9F0CD1F549A3D00FEBBAB /* SearchVC.swift in Sources */,
 				DA80DDB91F538B7200B682E8 /* MainVC.swift in Sources */,
 				DA4964961F56433500D5CCF0 /* Constant.swift in Sources */,
+				DA4964BF1F5CD11300D5CCF0 /* SelectSongVC.swift in Sources */,
 				DA80DDB71F538B7200B682E8 /* AppDelegate.swift in Sources */,
+				DA4964BD1F5CC6D900D5CCF0 /* PlaylistVC.swift in Sources */,
 				DAC9F0D61F54D94F00FEBBAB /* Playlist.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -14,7 +14,11 @@ class PlayListCell: UITableViewCell {
     @IBOutlet weak var thumbnail: UIImageView!
     
     func configureCell(plObject: Playlist) {
-        playlistLbl.text = plObject._title
+        if (playlistLbl?.text == nil) {
+            playlistLbl?.text = ""
+        }
+        
+        playlistLbl?.text = plObject._title
     }
 
 }

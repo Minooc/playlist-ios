@@ -21,10 +21,11 @@ class AddListVC: UIViewController {
     var playlists = [Playlist]()
     
     @IBOutlet weak var playlistTxt: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        globalPlaylists = self.playlists
         /*
         if (selectedVideo != nil) {
             let selectedVideoURL : URL = URL(string: selectedVideo)!
@@ -38,9 +39,11 @@ class AddListVC: UIViewController {
     }
     
     @IBAction func createPressed(_ sender: Any) {
+        
         if (playlistTxt.text != nil) {
             playlist._title = playlistTxt.text
         }
+        
         /*
         if let libVC = storyboard?.instantiateViewController(withIdentifier: "LibraryVC") as? LibraryVC {
      

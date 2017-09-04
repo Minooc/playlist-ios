@@ -46,22 +46,16 @@ class SearchVC: UIViewController, UISearchResultsUpdating, UISearchControllerDel
         
         if (tagNumber != nil) {
             let thisSong = searchList[tagNumber!]
-            performSegue(withIdentifier: "AddThisSong", sender: thisSong)
+            performSegue(withIdentifier: "AddToPlaylist", sender: thisSong)
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "AddThisSong") {
-            let addThisSongVC = segue.destination as? AddListVC
+        if (segue.identifier == "AddToPlaylist") {
+            let addToPlaylistVC = segue.destination as? AddToPlaylistVC
             
-           /* let videoHTML = "<iframe width=\"373\" height=\"210\" src=\"https://www.youtube.com/embed/" + ((sender as? YoutubeVideo)?._id)! + "\"frameborder=\"0\" allowfullscreen></iframe>"
-            addThisVideoVC?.selectedVideo = videoHTML
-             */
-
-            /*
-            let videoURL = "https://www.youtube.com/embed/" + ((sender as? YoutubeVideo)?._id)!
-            addThisVideoVC?.selectedVideo = videoURL
-            */
+            let thisSong = sender as? Youtube
+            addToPlaylistVC?.songToAdd = thisSong!
             
             
         }
@@ -145,8 +139,9 @@ class SearchVC: UIViewController, UISearchResultsUpdating, UISearchControllerDel
     /* Search */
     
     func downloadSearch(completed: @escaping DownloadComplete) {
-        let url = BASE_URL + PART_SNIPPET + MAX_RESULT + QUERYEQUAL +  "\(self._searchBarText as String)" + KEY
-        print(url)
+        let baseUrl = BASE_URL + PART_SNIPPET + MAX_RESULT + QUERYEQUAL +  "\(self._searchBarText as String)" + KEY
+        let url = baseUrl.replacingOccurrences(of: " ", with: "+")
+        
         Alamofire.request( url).responseJSON { response in
             
             if let dict = response.result.value as? Dictionary<String, AnyObject> {

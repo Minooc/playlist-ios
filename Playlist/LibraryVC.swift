@@ -21,6 +21,8 @@ class LibraryVC: UIViewController, UITableViewDataSource, UITableViewDelegate, A
         libraryTable.delegate = self
         libraryTable.dataSource = self
         
+        globalPlaylists = self.playlists
+        
     }
 
     
@@ -38,10 +40,20 @@ class LibraryVC: UIViewController, UITableViewDataSource, UITableViewDelegate, A
             addListVC?.delegate = self
             
         }
+        
+        if (segue.identifier == "toPlaylist") {
+            
+            let playlistVC = segue.destination as? PlaylistVC
+            playlistVC?.playlistTitle = playlists[((sender as? IndexPath)?.row)!]._title
+            playlistVC?.songList = playlists[((sender as? IndexPath)?.row)!]._songs
+            
+            
+        }
     }
     
     func dataChanged(playlists: [Playlist]) {
         self.playlists = playlists
+        globalPlaylists = self.playlists
         libraryTable.reloadData()
     }
     
@@ -73,13 +85,19 @@ class LibraryVC: UIViewController, UITableViewDataSource, UITableViewDelegate, A
         if (editingStyle == UITableViewCellEditingStyle.delete) {
             if (tableView.dequeueReusableCell(withIdentifier: "playListCell") as? PlayListCell) != nil {
 
-                let budget = playlists[indexPath.row]
+//                let thisPlaylist = playlists[indexPath.row]
                 playlists.remove(at: indexPath.item)
+                globalPlaylists = self.playlists
                 libraryTable.reloadData()
                 
                 
             }
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "toPlaylist", sender: indexPath)
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

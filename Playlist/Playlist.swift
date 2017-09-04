@@ -19,4 +19,8 @@ class Playlist {
         
     }
     
+    func addSong(songTitle: Youtube) {
+        //songTitle._title
+        _songs.append(songTitle)
+    }
 }

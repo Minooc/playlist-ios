@@ -8,6 +8,8 @@
 
 import UIKit
 
+var globalPlaylists = [Playlist]()
+
 class MainVC: UIViewController {
 
     override func viewDidLoad() {
