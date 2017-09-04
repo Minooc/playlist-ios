@@ -44,8 +44,10 @@ class AddToPlaylistVC: UIViewController,UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "playListCell", for: indexPath) as? PlayListCell {
             
+            
             let plObject = playlists[indexPath.row]
             cell.configureCell(plObject: plObject)
+            cell.configureImage(plObject: plObject)
             
             return cell
         } else {

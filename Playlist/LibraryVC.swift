@@ -24,7 +24,12 @@ class LibraryVC: UIViewController, UITableViewDataSource, UITableViewDelegate, A
         globalPlaylists = self.playlists
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        libraryTable.reloadData()
+    }
 
+    
     
     @IBAction func addPLBtnPressed(_ sender: Any) {
         performSegue(withIdentifier: "AddList", sender: nil)
@@ -57,11 +62,7 @@ class LibraryVC: UIViewController, UITableViewDataSource, UITableViewDelegate, A
         globalPlaylists = self.playlists
         libraryTable.reloadData()
     }
-    
-    func songChanged(songlist: [Youtube]) {
-        
-    }
-    
+
     /******************** TABLE *********************/
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -77,6 +78,7 @@ class LibraryVC: UIViewController, UITableViewDataSource, UITableViewDelegate, A
             
             let plObject = playlists[indexPath.row]
             cell.configureCell(plObject: plObject)
+            cell.configureImage(plObject: plObject)
             
             return cell
         } else {
