@@ -37,7 +37,9 @@ class PlayListCell: UITableViewCell {
                 thumbnail.image = UIImage(data: data!)
             }
             
-
+        } else {
+            
+            thumbnail.image = UIImage(named: "thumb")
         }
     }
 }
